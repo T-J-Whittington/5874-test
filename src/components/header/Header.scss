@@ -1,0 +1,118 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/main.scss';
+
+.header {
+  background-color: $background-light;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  &_content {
+    @include flex(row, space-between, center);
+    padding: $spacing-md 0;
+    position: relative;
+    max-height: 200px;
+  }
+  
+  &_logo {
+    top: 32px;
+    left: 172px;
+    width: 197px;
+    height: 90px;
+  }
+  
+  &_menu-toggle {
+    @include flex(column, center, center);
+    width: 30px;
+    height: 24px;
+    position: relative;
+    z-index: 110;
+    
+    @include responsive(md) {
+      display: none;
+    }
+    
+    span {
+      margin: auto;
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: $background-light;
+      margin: 3px 0 $text-color;
+      transition: all $transition-normal;
+    }
+    
+    &.is-active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+      }
+    }
+  }
+  
+  &_nav {
+    @include responsive(md) {
+      display: block !important; // Override mobile toggle
+    }
+    
+    @media (max-width: #{$breakpoint-md - 1px}) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 80%;
+      max-width: 300px;
+      height: 100vh;
+      background-color: $background-light;
+      box-shadow: $shadow-lg;
+      transform: translateX(100%);
+      transition: transform $transition-normal;
+      z-index: 100;
+      padding: 5rem $spacing-lg $spacing-lg;
+      
+      &.is-open {
+        transform: translateX(0);
+      }
+    }
+  }
+  
+  &_nav-list {
+    @include flex(column, flex-start, stretch);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    @include responsive(md) {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  &_nav-item {
+    margin-bottom: $spacing-md;
+    
+    @include responsive(md) {
+      margin-bottom: 0;
+      margin-right: $spacing-md;
+    }
+  }
+  
+  &_nav-link {
+    color: $text-color;
+    text-decoration: none;
+    
+    &:hover, &.active {
+      border-bottom: 2px solid;
+    }
+  }
+}

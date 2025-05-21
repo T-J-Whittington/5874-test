@@ -1,0 +1,94 @@
+// Flexbox shortcuts
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Media queries
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Typography
+@mixin heading($size: md) {
+  font-family: $font-family-heading;
+  font-weight: 700;
+  line-height: 1.2;
+  
+  @if $size == xs {
+    font-size: 0.875rem;
+  } @else if $size == sm {
+    font-size: 1rem;
+  } @else if $size == md {
+    font-size: 1.5rem;
+  } @else if $size == lg {
+    font-size: 2rem;
+  } @else if $size == xl {
+    font-size: 2.5rem;
+  } @else if $size == xxl {
+    font-size: 3rem;
+  }
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $spacing-md;
+  padding-right: $spacing-md;
+  
+  @include responsive(sm) {
+    max-width: 540px;
+  }
+  
+  @include responsive(md) {
+    max-width: 720px;
+  }
+  
+  @include responsive(lg) {
+    max-width: 960px;
+  }
+  
+  @include responsive(xl) {
+    max-width: 1140px;
+  }
+}
+
+// Card
+@mixin card($padding: md, $shadow: md) {
+  background-color: $background-dark;
+  border-radius: $border-radius-sm;
+  
+  @if $padding == sm {
+    padding: $spacing-sm;
+  } @else if $padding == md {
+    padding: $spacing-md;
+  } @else if $padding == lg {
+    padding: $spacing-lg;
+  }
+  
+  @if $shadow == sm {
+    box-shadow: $shadow-sm;
+  } @else if $shadow == md {
+    box-shadow: $shadow-md;
+  } @else if $shadow == lg {
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Base theme for the darker coloured panels.
+@mixin darkPanel {
+    background-color: $background-dark;
+}

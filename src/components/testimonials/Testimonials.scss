@@ -1,0 +1,29 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.testimonials {
+    padding: $spacing-lg 0;
+
+    &_content {
+        @include flex(column, flex-start, stretch);
+        margin-bottom: $spacing-lg;
+
+        @include responsive(lg) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &_header-text {
+        &-alt {
+            color: $text-color !important;
+        }
+    }
+}
+
+.card {
+    padding: $spacing-md 0;
+    margin-bottom: $spacing-sm;
+
+    @include card();
+}

@@ -1,0 +1,26 @@
+[
+  {
+      "id": 1,
+      "name": "Jane Smith",
+      "position": "CEO",
+      "company": "Tech Innovators",
+      "quote": "This platform has transformed how we operate. Highly recommended!",
+      "avatar": "https://via.placeholder.com/64"
+    },
+    {
+      "id": 2,
+      "name": "John Doe",
+      "position": "CTO",
+      "company": "Digital Solutions",
+      "quote": "The features and support are unmatched in the industry.",
+      "avatar": "https://via.placeholder.com/64"
+    },
+    {
+      "id": 3,
+      "name": "Emily Johnson",
+      "position": "Marketing Director",
+      "company": "Growth Experts",
+      "quote": "We've seen a 40% increase in efficiency since implementation.",
+      "avatar": "https://via.placeholder.com/64"
+  }
+]

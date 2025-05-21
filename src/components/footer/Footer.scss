@@ -1,0 +1,129 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.footer {
+  @include darkPanel;
+  padding: $spacing-lg 0;
+  
+  &_content {
+    @include flex(column, flex-start, stretch);
+    margin-bottom: $spacing-lg;
+    
+    @include responsive(lg) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  &_company {
+    margin-bottom: $spacing-lg;
+    
+    @include responsive(lg) {
+      width: 30%;
+      margin-bottom: 0;
+    }
+  }
+  
+  &_header-text {
+    &-alt {
+      color: $text-color !important;
+    }
+  }
+  
+  &_description {
+    margin-bottom: $spacing-md;
+  }
+  
+  &_social {
+    @include flex(row, flex-start, center);
+  }
+  
+  &_social-link {
+    margin-right: $spacing-md;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary-color;
+    }
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  &_links {
+    @include flex(column, flex-start, stretch);
+    
+    @include responsive(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    @include responsive(lg) {
+      width: 65%;
+    }
+  }
+  
+  &_links-column {
+    margin-bottom: $spacing-md;
+    
+    @include responsive(md) {
+      width: calc(33.333% - #{$spacing-md});
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &_column-title {
+    font-size: 1.125rem;
+    margin-bottom: $spacing-md;
+  }
+  
+  &_menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  &_menu-item {
+    margin-bottom: $spacing-sm;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &_menu-link {
+    text-decoration: none;
+    transition: color $transition-fast;
+    
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  
+  &_bottom {
+    padding-top: $spacing-md;
+    @include flex(column, center, center);
+    text-align: center;
+    
+    @include responsive(md) {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+  
+  &_copyright {
+    margin-bottom: $spacing-sm;
+    font-size: 0.875rem;
+    
+    @include responsive(md) {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// Set theme-wide defaults
+body {
+    margin: 0;    
+    font-family: $font-family-base;
+    background-color: $background-light;
+    color: $text-color;
+
+    .app {
+
+        h1 {
+            color: $header-color;
+            @include heading(xl);
+        }
+
+        h2 {
+            color: $header-color;
+            @include heading(lg);
+        }
+
+        h3 {
+            color: $header-color;
+            @include heading(md);
+        }
+
+        h4 {
+            color: $header-color;
+            @include heading(sm);
+        }
+
+        h5 {
+            color: $header-color;
+            @include heading(xs);
+        }
+    }
+}
+
+.container {
+    @include container;
+}
