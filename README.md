@@ -15,4 +15,6 @@ To this extent, I've handled the Testimonials segment, header and footer. With t
 
 I've tried using Vite to host the webpage, since I've not used it before. I found it to be a bit of a faff compared to my experiences with Node.js for hosting webpages.
 
+I also primarily used Typescript as outlined in the specification.
+
 If you have any questions, please don't hesitate to reach out.
